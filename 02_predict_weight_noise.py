@@ -20,7 +20,7 @@ import config as cf
 import utils
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', type=str, default="model_weights.pth")
+parser.add_argument('--model', type=str, default="model_vanilla.pth")
 args = parser.parse_args()
 
 # GPU(CUDA)が使えるかどうか？
@@ -78,7 +78,7 @@ fc1_bk = model.fc1.weight.data.detach()
 for j, amp in enumerate([1., 2., 4.]):
     print(f"#amp={amp}")
     print("rate,acc")
-    for i, rate in enumerate(np.linspace(0.1, 1., 10)):
+    for i, rate in enumerate(np.linspace(0., 1., 11)):
         loss_sum = 0
         correct = 1
         
