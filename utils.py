@@ -43,5 +43,6 @@ def add_weight_noise(w_, rate=0., amp=2.):
     sel[sel >= (1. - rate)] = 1.
     ns = np.exp(ns * sel)
     w = w * ns
+    w = np.clip(w, -5., 5.)
     return torch.from_numpy(w.astype(np.float32)).clone()
 
