@@ -51,14 +51,14 @@ transform = transforms.Compose([
 # MNISTデータの取得
 # https://pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html#torchvision.datasets.MNIST
 # 学習用
-train_dataset = datasets.MNIST(
+train_dataset = datasets.FashionMNIST(
     '../ds',               # データの保存先
     train = True,           # 学習用データを取得する
     download = True,        # データが無い時にダウンロードする
     transform = transform   # テンソルへの変換など
     )
 # 評価用
-test_dataset = datasets.MNIST(
+test_dataset = datasets.FashionMNIST(
     '../ds', 
     train = False,
     transform = transform
