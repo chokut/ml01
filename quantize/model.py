@@ -25,8 +25,8 @@ class Net(nn.Module):
     def forward(self, x, droprate=0.):
         # 順伝播の設定（インスタンスしたクラスの特殊メソッド(__call__)を実行）
         x = self.fc1(x)
-        #x = F.relu(x)
-        x = torch.clip(x, 0., 1.)
+        x = F.relu(x)
+        #x = torch.clip(x, 0., 1.)
         x = self.fc2(x)
         return x
 
